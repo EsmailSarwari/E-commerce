@@ -4,7 +4,7 @@
 
 <?php
 
-if (isset($_POST['name'])) {
+if (isset($_POST['add'])) {
 
     $ca_name = $_POST['name'];
 

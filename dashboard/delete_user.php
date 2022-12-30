@@ -1,4 +1,3 @@
-<?php require '../app/session.php'?>
 <?php require '../app/database/connection.php';
 
 if (isset($_GET['u_id'])) {
@@ -13,4 +12,3 @@ if (isset($_GET['u_id'])) {
         echo "<script> window.location.href=\"user_delete.php?false=true\"</script>";
     }
 }
-
