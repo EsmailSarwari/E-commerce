@@ -13,7 +13,6 @@ if (isset($_GET['p_id'])) {
     $row = $result->fetch_assoc();
 }
 
-
 if (isset($_POST['update'])) {
 
     $p_id = $_GET['p_id'];
@@ -25,7 +24,7 @@ if (isset($_POST['update'])) {
     $up_quant = $_POST['quantity'];
 
     $src = $_FILES['image']['tmp_name'];
-    $des = 'img/' . time() . $_FILES['image']['name'];
+    $des = '../images/' . time() . $_FILES['image']['name'];
 
     move_uploaded_file($src, $des);
 

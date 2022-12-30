@@ -13,11 +13,12 @@ if (isset($_POST['name'])) {
     $p_quant = $_POST['quant'];
 
     $src = $_FILES['image']['tmp_name'];
-    $des = 'img/' . time() . $_FILES['image']['name'];
+    $des = '../images/' . time() . $_FILES['image']['name'];
 
     move_uploaded_file($src, $des);
 
-    $result = $connection->query("INSERT INTO products VALUES (null, '$p_name' , '$p_desc', '$p_size', '$p_price', '$p_quant', '$des')");
+    $result = $connection->query("INSERT INTO products VALUES 
+    (null, '$p_name' , '$p_desc', '$p_size', '$p_price', '$p_quant', '$des')");
     if ($result) {
         echo "<script> window.location.href=\"products.php?add=success\" </script>";
     } else {

@@ -8,7 +8,7 @@ if (isset($_GET['ca_id'])) {
 
     $ca_id = $_GET['ca_id'];
 
-    $result = $connection->query("SELECT * FROM category WHERE ca_id=". $ca_id);
+    $result = $connection->query("SELECT * FROM category WHERE ca_id=" . $ca_id);
 
     $row = $result->fetch_assoc();
 
@@ -32,7 +32,7 @@ if (isset($_POST['update'])) {
     <h3>Update Category</h3>
     <form method="POST">
         <div class="form-group">
-            <input type="text" name="name" , placeholder="Update Category Name" value="<?php echo $row['name']; ?>" >
+            <input type="text" name="name" , placeholder="Update Category Name" value="<?php echo $row['name']; ?>">
         </div>
         <br>
         <button name="update" class="btn btn-primary">Update</button>

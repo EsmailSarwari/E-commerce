@@ -20,47 +20,29 @@ require_once 'layout/header.php';
 <div class="six_box">
    <div class="container-fluid">
       <div class="row">
-         <div class="col-md-2 col-sm-4 pa_left">
-            <div class="six_probpx yellow_bg">
-               <i><img src="images/shoes.png" alt="#" /></i>
-               <span>Shoes</span>
-            </div>
-         </div>
-         <div class="col-md-2 col-sm-4 pa_left">
-            <div class="six_probpx bluedark_bg">
-               <i><img src="images/underwear.png" alt="#" /></i>
-               <span>underwear</span>
-            </div>
-         </div>
-         <div class="col-md-2 col-sm-4 pa_left">
-            <div class="six_probpx yellow_bg">
-               <i><img src="images/pent.png" alt="#" /></i>
-               <span>Pante & socks</span>
-            </div>
-         </div>
-         <div class="col-md-2 col-sm-4 pa_left">
-            <div class="six_probpx bluedark_bg">
-               <i><img src="images/t_shart.png" alt="#" /></i>
-               <span>T-shirt & tankstop</span>
-            </div>
-         </div>
-         <div class="col-md-2 col-sm-4 pa_left">
-            <div class="six_probpx yellow_bg">
-               <i><img src="images/jakit.png" alt="#" /></i>
-               <span>cardigans & jumpers</span>
-            </div>
-         </div>
-         <div class="col-md-2 col-sm-4 pa_left">
-            <div class="six_probpx bluedark_bg">
-               <i><img src="images/helbet.png" alt="#" /></i>
-               <span>Top & hat</span>
-            </div>
+
+         <?php
+         include 'app/database/connection.php';
+
+         $result = $connection->query("SELECT category.ca_id, category.name AS cname , products.name AS pname, 
+         products.image FROM category INNER JOIN products ON category.ca_id = products.p_id");
+
+         ?>
+         
+         <div class="col-md-12 col-sm-6 mx-auto">
+            <?php while ($row = $result->fetch_assoc()) { ?>
+               <div class="six_probpx">
+                  <i><img style="height:300px;" src="<?php echo $row['image'] ?>" alt="image" /></i>
+                  <h6 class="blodark">
+                     <?php echo $row['pname'] ?>
+                  </h6>
+                  <h4><?php echo $row['cname'] ?></h4>
+               </div>
+               <?php } ?>
          </div>
       </div>
    </div>
 </div>
-
-
 
 <div id="project" class="project">
    <div class="container">

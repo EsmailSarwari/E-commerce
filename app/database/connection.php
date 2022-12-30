@@ -1,13 +1,6 @@
-<?php 
+<?php
 
-   $connection = new mysqli("localhost", "root", "secret", "romofyi");
+$connection = new mysqli("localhost", "root", "secret", "romofyi");
 
-   if (!$connection) echo "database connection failed";  
+if (!$connection) echo "database connection failed";
 
-
-
-
-
-  
-
-     
