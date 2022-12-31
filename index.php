@@ -17,32 +17,31 @@ require_once 'layout/header.php';
 </section>
 <!-- end banner -->
 <!-- six_box section -->
-<div class="six_box">
+<!-- <div class="six_box">
    <div class="container-fluid">
-      <div class="row">
 
          <?php
-         include 'app/database/connection.php';
-
-         $result = $connection->query("SELECT category.ca_id, category.name AS cname , products.name AS pname, 
-         products.image FROM category INNER JOIN products ON category.ca_id = products.p_id");
-
+         // include 'app/database/connection.php';
+         
+         //$result = $connection->query("SELECT category.ca_id, category.name AS cname , products.name AS pname, 
+         // products.image FROM category INNER JOIN products ON category.ca_id = products.p_id");
+         
          ?>
 
          <div class="col-md-12 col-sm-6 mx-auto">
-            <?php while ($row = $result->fetch_assoc()) { ?>
+            <?php //while ($row = $result->fetch_assoc()) { ?>
                <div class="six_probpx">
-                  <i><img style="height:300px;" src="<?php echo $row['image'] ?>" alt="image" /></i>
+                  <i><img style="height:300px;" src="<?php //echo $row['image'] ?>" alt="image" /></i>
                   <h6 class="blodark">
-                     <?php echo $row['pname'] ?>
+                     <?php //echo $row['pname'] ?>
                   </h6>
-                  <h4><?php echo $row['cname'] ?></h4>
+                  <h4><?php //echo $row['cname'] ?></h4>
                </div>
-               <?php } ?>
+               <?php// } ?>
          </div>
       </div>
    </div>
-</div>
+</div>*/ -->
 
 <div id="project" class="project">
    <div class="container">
@@ -56,11 +55,25 @@ require_once 'layout/header.php';
       <div class="row">
          <div class="product_main">
 
+            <?php
+            require 'app/database/connection.php';
+
+            $result = $connection->query("SELECT * FROM products");
+
+
+
+            ?>
+
+
             <div class="project_box ">
-               <div class="dark_white_bg">
-                  <img src="images/shoes1.png" alt="#" />
-               </div>
-               <h3>Short Openwork Cardigan $120.00</h3>
+               <?php while ($row = $result->fetch_assoc()) { ?>
+                  <div class="dark_white_bg">
+                     <img src="<?php echo $row['image'] ?>" alt="#" />
+                  </div>
+                  <h3><?php echo $row['name']; ?></h3>
+                  <h3><?php echo $row['price']; ?></h3>
+                  <span class="fa fa-car" ></span>
+                  <?php } ?>
             </div>
 
 

@@ -19,40 +19,28 @@ $result = $connection->query("SELECT * FROM category");
 
 <div class="row">
    <div class="container">
-      
-         <div class="col-md-6 mx-auto ">
-            <table class="table">
-               <tr>
+      <div class="col-md-6 mx-auto ">
+         <table class="table">
+            <tr>
                <?php while ($row = $result->fetch_assoc()) { ?>
-               <td>
-                  <a href="preview.php?ca_id=<?php echo $row['ca_id']; ?> &q=photo">
-                     <img width='30px' src="<?php echo $row['image']; ?>" alt="img"><br>
-                  </a>
-                  <a href="cart.php" >
-                     <span>
-                        <?php echo $row['name']; ?>
-                     </span>
-                  </a>
-               </td>
+                  <td>
+                     <a href="preview.php?ca_id=<?php echo $row['ca_id']; ?> &q=photo">
+                        <img width='30px' src="<?php echo $row['image']; ?>" alt="img"><br>
+                     </a>
+                     <a href="cart.php">
+                        <span>
+                           <?php echo $row['name']; ?>
+                        </span>
+                     </a>
+                  </td>
                <?php } ?>
-               </tr>
-              
-            </table>
-         </div>
-         
+            </tr>
+         </table>
+      </div>
    </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
+<?php require_once 'layout/footer.php'; ?>
 
 
 <!-- project section -->
