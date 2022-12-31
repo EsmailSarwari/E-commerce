@@ -11,7 +11,7 @@ if (isset($_POST['signup'])) {
   $password = $_POST['password'];
   $cfrmpass = $_POST['confirmpassword'];
 
-  hash("md5", $password);
+  $password = hash("md5", $password);
   
     $result = $connection->query("INSERT INTO customer VALUES (null, '$fullName', '$email', '$password')");
     if ($result) {
@@ -27,7 +27,7 @@ if (isset($_POST['signin'])) {
 
   $result = $connection->query("SELECT * FROM customer WHERE email = '$username' AND password = '$password'");
   if ($result->num_rows == 1) {
-    header('location:card.php?login=success');
+    header('location:cart.php?login=success');
   } else {
     header('location:login.php?login=fail');
   }
@@ -42,8 +42,8 @@ if (isset($_POST['signin'])) {
     <div class="nav">
       <ul class="links">
         <li class="signin-active"><a class="btn">Sign in</a></li>
-        <li class="signup-inactive"><a class="btn">Sign up </a></li>
-      </ul>
+        <li class="signup-inactive"><a class="btn">Sign up </a>
+      </u>
     </div>
     <div ng-app ng-init="checked = false">
 
@@ -60,7 +60,7 @@ if (isset($_POST['signin'])) {
       </form>
 
       <form class="form-signup" action="" method="POST" name="form">
-        <label for="fullname">Full name</label>
+        <label for="fullname">Name</label>
         <input class="form-styling" type="text" name="fullname" placeholder="" />
         <label for="email">Email</label>
         <input class="form-styling" type="text" name="email" placeholder="" />

@@ -22,6 +22,14 @@ if (isset($_GET['p_id'])) {
         $row = $result->fetch_assoc();
 }
 
+if (isset($_GET['ca_id'])) {
+
+    $id = $_GET['ca_id'];
+
+    $result = $connection->query("SELECT * FROM category WHERE ca_id=" . $id);
+
+    $row = $result->fetch_assoc();
+}
 
 
 ?>

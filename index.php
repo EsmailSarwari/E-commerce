@@ -9,7 +9,7 @@ require_once 'layout/header.php';
             <div class="text-bg">
                <h1> <span class="blodark"> Romofyi </span> <br>Trands 2019</h1>
                <p>A huge fashion collection for ever </p>
-               <a class="read_more" href="products.php">Shop now</a>
+               <a class="read_more" href="shop.php">Shop now</a>
             </div>
          </div>
       </div>
@@ -28,7 +28,7 @@ require_once 'layout/header.php';
          products.image FROM category INNER JOIN products ON category.ca_id = products.p_id");
 
          ?>
-         
+
          <div class="col-md-12 col-sm-6 mx-auto">
             <?php while ($row = $result->fetch_assoc()) { ?>
                <div class="six_probpx">
@@ -57,7 +57,9 @@ require_once 'layout/header.php';
          <div class="product_main">
 
             <div class="project_box ">
-               <div class="dark_white_bg"><img src="images/shoes1.png" alt="#" /></div>
+               <div class="dark_white_bg">
+                  <img src="images/shoes1.png" alt="#" />
+               </div>
                <h3>Short Openwork Cardigan $120.00</h3>
             </div>
 

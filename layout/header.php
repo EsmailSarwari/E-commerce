@@ -33,7 +33,7 @@
                   </div>
                   <div class="col-md-4">
                      <ul class="right_icon d_none1">
-                        <li><a href="#"><img src="images/shopping.png" alt="#" /></a> </li>
+                        <li><a href="cart.php"><img src="images/shopping.png" alt="#" /></a> </li>
                         <a href="#" class="order">Order Now</a>
                      </ul>
                   </div>
@@ -74,7 +74,7 @@
                                  echo "active";
 
                               ?> ">
-                                 <a class="nav-link" href="products.php">Products</a>
+                                 <a class="nav-link" href="shop.php">Shop now</a>
                               </li>
                               <li class="nav-item <?php
 
@@ -82,7 +82,6 @@
                                  echo "active";
 
                               ?> ">
-                                 <a class="nav-link" href="fashion.php">Fashion</a>
                               </li>
                               <li class="nav-item <?php
 
@@ -90,7 +89,7 @@
                                  echo "active";
 
                               ?> ">
-                                 <a class="nav-link" href="contact.php">Contact_Us</a>
+                                 <a class="nav-link" href="contact.php">Contact Us</a>
                               </li>
                               <li class="nav-item <?php
 
@@ -98,7 +97,7 @@
                                  echo "active";
 
                               ?> ">
-                                 <a class="nav-link" href="login.php">SingUp/In</a>
+                                 <a class="nav-link" href="login.php">Sing Up/In</a>
                               </li>
                            </ul>
                         </div>

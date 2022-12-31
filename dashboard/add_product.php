@@ -4,7 +4,7 @@
 
 <?php
 
-if (isset($_POST['name'])) {
+if (isset($_POST['add'])) {
 
     $p_name = $_POST['name'];
     $p_desc = $_POST['desc'];
