@@ -12,15 +12,15 @@ if (isset($_POST['signup'])) {
   $cfrmpass = $_POST['confirmpassword'];
 
   $password = hash("md5", $password);
-  
-    $result = $connection->query("INSERT INTO customer VALUES (null, '$fullName', '$email', '$password')");
-    if ($result) {
-      header('location:login.php?signup=success');
-    } else {
-      header('location:login.php?signup=fail');
-    }
-}
 
+  $result = $connection->query("INSERT INTO customer VALUES (null, '$fullName', '$email', '$password')");
+  if ($result) {
+    header('location:login.php?signup=success');
+  } else {
+    header('location:login.php?signup=fail');
+  }
+}
+  
 if (isset($_POST['signin'])) {
   $username = $_POST['username'];
   $password = $_POST['psd'];
@@ -33,8 +33,6 @@ if (isset($_POST['signin'])) {
   }
 }
 
-
-
 ?>
 
 <div class="container">
@@ -43,20 +41,20 @@ if (isset($_POST['signin'])) {
       <ul class="links">
         <li class="signin-active"><a class="btn">Sign in</a></li>
         <li class="signup-inactive"><a class="btn">Sign up </a>
-      </u>
+          </u>
     </div>
     <div ng-app ng-init="checked = false">
 
       <form class="form-signin" action="" method="POST" name="form">
-          <label for="username">Username</label>
-          <input type="text" name="username" placeholder="" class="form-styling" />
-          <label for="password">Password</label>
-          <input type="password" name="psd" placeholder="" class="form-styling" />
-          <input type="checkbox" id="checkbox" name='checked' />
-          <label for="checkbox"><span class="ui"></span>Keep me signed in</label>
-          <div class="btn-animate">
-              <button class="btn-signin" name='signin'>Sign in</button>
-          </div>
+        <label for="username">Username</label>
+        <input type="text" name="username" placeholder="" class="form-styling" />
+        <label for="password">Password</label>
+        <input type="password" name="psd" placeholder="" class="form-styling" />
+        <input type="checkbox" id="checkbox" name='checked' />
+        <label for="checkbox"><span class="ui"></span>Keep me signed in</label>
+        <div class="btn-animate">
+          <button class="btn-signin" name='signin'>Sign in</button>
+        </div>
       </form>
 
       <form class="form-signup" action="" method="POST" name="form">

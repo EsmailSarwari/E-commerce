@@ -8,7 +8,7 @@ if (isset($_POST['add'])) {
 
     $ca_name = $_POST['name'];
 
-    $src = $_FILES['image']['tmp_name'];
+    $src = $_FILES['image']['tmp_name'];    
     $dest = '../images/'.time() . $_FILES['image']['name'];
 
     move_uploaded_file($src, $dest);

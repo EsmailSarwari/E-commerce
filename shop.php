@@ -10,7 +10,7 @@ $result = $connection->query("SELECT * FROM category");
       <div class="row">
          <div class="col-md-12">
             <div class="titlepage">
-               <h2>Featured Products</h2>
+               <h2>categories</h2>
             </div>
          </div>
       </div>
@@ -25,9 +25,10 @@ $result = $connection->query("SELECT * FROM category");
                <?php while ($row = $result->fetch_assoc()) { ?>
                   <td>
                      <a href="preview.php?ca_id=<?php echo $row['ca_id']; ?> &q=photo">
-                        <img width='30px' src="<?php echo $row['image']; ?>" alt="img"><br>
+                        <img style="width:100px; height:100px;" src="<?php echo substr($row['image'], 3, strlen($row['image'])) ?>"
+                           alt="img"><br>
                      </a>
-                     <a href="cart.php">
+                     <a href="all_products.php">
                         <span>
                            <?php echo $row['name']; ?>
                         </span>
@@ -40,101 +41,46 @@ $result = $connection->query("SELECT * FROM category");
    </div>
 </div>
 
-<?php require_once 'layout/footer.php'; ?>
 
-
-<!-- project section -->
 <div id="project" class="project">
    <div class="container">
-
       <div class="row">
-         <div class="product_main">
-
-            <div class="project_box ">
-               <div class="dark_white_bg"><img src="images/shoes1.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box ">
-               <div class="dark_white_bg"><img src="images/shoes2.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/shoes3.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/shoes4.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/shoes5.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-
-            <div class="project_box ">
-               <div class="dark_white_bg"><img src="images/tisat1.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box ">
-               <div class="dark_white_bg"><img src="images/tisat2.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/tisat3.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/tisat4.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/tisat5.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-
-            <div class="project_box ">
-               <div class="dark_white_bg"><img src="images/mix1.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box ">
-               <div class="dark_white_bg"><img src="images/mix2.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/mix3.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/mix4.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="project_box">
-               <div class="dark_white_bg"><img src="images/mix5.png" alt="#" /></div>
-               <h3>Short Openwork Cardigan $120.00</h3>
-            </div>
-
-            <div class="col-md-12">
-               <a class="read_more" href="#">See More</a>
+         <div class="col-md-10">
+            <div class="titlepage">
+               <h2>Featured Products</h2>
             </div>
          </div>
       </div>
+
+      <?php $result1 = $connection->query("SELECT * FROM products"); ?>
+
+      <div class="row">
+         <div class="col-md-12 col-md-offset-6 mx-auto">
+            <table>
+               <tr>
+                  <?php while ($row1 = $result1->fetch_assoc()) { ?>
+                     <td>
+                        <div class="img img-thumbnail">
+                           <a href="all_products.php">
+                              <img style="width:200px; height:200px;" src="<?php echo substr($row1['image'], 3, strlen($row1['image'])); ?>"
+                                 alt="img">
+                           </a>
+                        </div>
+                        <?php echo $row1['name'] ?> <br>
+                        <?php echo $row1['price'] ?>
+                     </td>
+                  <?php } ?>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div class="col-md-12">
+         <a class="read_more" href="all_products.php">See More</a>
+      </div>
    </div>
 </div>
-<!-- end project section -->
+
+
 <?php
 require_once 'layout/footer.php';
 ?>

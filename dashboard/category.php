@@ -36,15 +36,15 @@ $result = $connection->query("SELECT * FROM category");
                         <?php echo $row['name'] ?>
                     </td>
                     <td>
-                        <a href="preview.php?ca_id=<?php echo $row['ca_id']; ?> &q=photo">
-                            <img width='30px' src="<?php echo $row['image']; ?>" alt="img">
+                        <a href="preview.php?ca_id=<?php echo $row['ca_id'];?>&q=photo">
+                            <img width='30px' src="<?php echo $row['image'];?>" alt="img">
                         </a>
                     </td>
                     <td class="text-center">
-                        <a href="edit_category.php?ca_id=<?php echo $row['ca_id']; ?> &category" class="fa fa-edit"></a>
+                        <a href="edit_category.php?ca_id=<?php echo $row['ca_id']; ?>&category" class="fa fa-edit"></a>
                     </td>
                     <td class="text-center">
-                        <a href="delete_category.php?ca_id=<?php echo $row['ca_id']; ?> &category" class="fa fa-trash "></a>
+                        <a href="delete_category.php?ca_id=<?php echo $row['ca_id'];?>&category" class="fa fa-trash "></a>
                     </td>
                 </tr>
                 <?php } ?>
